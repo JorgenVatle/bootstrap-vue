@@ -201,9 +201,11 @@ export default {
       }
     },
     onFocus (evt) {
+      this.$emit('focus', evt);
       eventOn(document, 'wheel', this.stopWheel)
     },
     onBlur (evt) {
+      this.$emit('blur', evt);
       eventOff(document, 'wheel', this.stopWheel)
     },
     stopWheel (evt) {
